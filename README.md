@@ -3,6 +3,9 @@
 インストールが必要なライブラリ
 
 pip install SpeechRecognition
+
 pip install vosk
-pip install sounddevice
+
+p1ip install sounddevice
+
 pip install pyaudio
