@@ -101,7 +101,8 @@ def main(chunk_size=8000):
     mic_stream = MicrophoneStream(sample_rate, chunk_size)  # マイク音声入力のストリームを初期化
 
     # 音声認識器を構築
-    recognizer = KaldiRecognizer(Model("model"), sample_rate)  # Kaldiモデルとサンプリングレートを使用して認識器を構築
+    model = Model(model_name="vosk-model-ja-0.22")
+    recognizer = KaldiRecognizer(model, sample_rate)  # Kaldiモデルとサンプリングレートを使用して認識器を構築
 
     # マイク入力ストリームおよび音声認識器をまとめて保持
     VoskStreamingASR = namedtuple("VoskStreamingASR", ["microphone_stream", "recognizer"])  # 名前付きタプルを作成
